@@ -20,6 +20,8 @@ class RouterConfig extends React.Component {
         this.state = {
             collapsed: false,
         };
+
+        this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
@@ -34,12 +36,13 @@ class RouterConfig extends React.Component {
                 <Layout>
                     <Sider
                      theme='light'
+                     collapsed={this.state.collapsed}
                     >
                         <Route paht="/:name" component={Navigation} />
                     </Sider>
                     <Layout>
                         <Header theme='light' className={styles.layout}>
-                            <Icon type="menu-fold" onClick={this.toggle} />
+                            <Icon className={styles.toggle} type="menu-fold" onClick={this.toggle} />
                             <Route path="/:name" component={Crumbs} />
                         </Header>
                         <Content>
