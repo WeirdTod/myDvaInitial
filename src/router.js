@@ -42,6 +42,7 @@ class RouterConfig extends React.Component {
                     </Sider>
                     <Layout>
                         <Header theme='light' className={styles.layout}>
+                            <div className={styles.first}></div>
                             <Icon className={styles.toggle} type="menu-fold" onClick={this.toggle} />
                             <Route path="/:name" component={Crumbs} />
                         </Header>
