@@ -13,18 +13,19 @@ class Users extends React.Component {
 	}
 
 	render () {
-		const { users } = this.props;
+		const { users, dispatch } = this.props;
+		const data = {...users, dispatch};
 		return (
 			<div>
-				<UserList {...users} />
+				<UserList {...data} />
 			</div>
 		);
 	}
 }
 
 //指定订阅数据,关联users
-function mapStateToProps({ users }){
-	return { users };
+function mapStateToProps({ users, dispatch }){
+	return { users, dispatch };
 }
 
 export default connect(mapStateToProps)(Users);
